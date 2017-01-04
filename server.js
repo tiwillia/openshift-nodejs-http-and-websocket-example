@@ -20,11 +20,12 @@ wss = new WebSocketServer({
     autoAcceptConnections: false
 });
 wss.on('connection', function(ws) {
-  console.log("New connection");
+  console.log("New connection:");
+  console.log(console.log(ws.upgradeReq.headers);
   ws.on('message', function(message) {
     ws.send("Received: " + message);
   });
-  ws.send('Welcome!');
+  ws.send('Check logs in app for headers');
 });
 
 console.log("Listening to " + ipaddress + ":" + port + "...");
